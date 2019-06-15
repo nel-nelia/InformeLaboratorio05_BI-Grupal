@@ -1,0 +1,26 @@
+\begin{thebibliography}{}
+
+\bibitem[Cede{\~n}o~Trujillo, 2006]{cedeno2006modelo}
+Cede{\~n}o~Trujillo, A. (2006).
+\newblock Modelo multidimensional.
+\newblock {\em Ingenier{\'\i}a Industrial}, 27(1).
+
+\bibitem[Cuevas et~al., 2016]{cuevas2016comparing}
+Cuevas, A.~S., Sanchez, M.~T., Hernandez, L.~G., Cuevas, A.~S., and Suarez,
+  R.~R. (2016).
+\newblock Comparing tabular and multidimentional model in a real bi solution.
+\newblock {\em IEEE Latin America Transactions}, 14(7):3393--3399.
+
+\bibitem[Ramos, 2016]{ramos2016data}
+Ramos, S. (2016).
+\newblock Data warehouse, data marts y modelos dimensionales.
+\newblock {\em SolidQ Global}.
+
+\bibitem[S{\'a}nchez et~al., 2015]{sanchez2015modelacion}
+S{\'a}nchez, M.~T., Cervantes, Y.~E., Cuevas, A.~S., Hern{\'a}ndez, L.~G., and
+  Cuevas, A. J.~S. (2015).
+\newblock Modelaci{\'o}n tabular: una alternativa sugerente para el
+  an{\'a}lisis de los datos.
+\newblock {\em Ciencias de la Informaci{\'o}n}, 46(1):3--10.
+
+\end{thebibliography}

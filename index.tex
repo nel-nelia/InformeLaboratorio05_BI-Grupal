@@ -1,0 +1,121 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{lineno}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\setlength\columnsep{38pt}
+\usepackage{enumerate} 
+\usepackage[left=2.8cm,top=2.3cm,right=2.8cm,bottom=2.3cm]{geometry} 
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{float}
+
+
+\begin{document}
+	
+	\begin{center}
+		\huge \textbf{Modelo Dimensional vs Modelo Tabular} 
+	\end{center}
+	\vspace{\baselineskip}
+	\begin{center}
+		\includegraphics[scale=0.37]{./Imagenes/logo}
+	\end{center}
+	\vspace{\baselineskip}
+	\begin{multicols}{2}
+		\small
+		\begin{center}
+			Nelia Escalante Marón\\
+			2014049551\\
+			UPT – Ingeniería de Sistemas\\
+			EPIS\\
+			Tacna, Perú\\
+			\vspace{\baselineskip}
+			Yerson Coaquira Calizaya\\
+			2015053225\\
+			UPT – Ingeniería de Sistemas\\  
+			EPIS\\
+			Tacna, Perú\\                 
+			\vspace{\baselineskip}
+			Flor Condori Gutierrez\\
+			2015053227\\
+			UPT – Ingeniería de Sistemas\\  
+			EPIS\\	
+			Tacna, Perú\\                 
+			\columnbreak
+			
+			\vspace{\baselineskip}
+			Christian Cespedes Medina\\
+			2010036256\\
+			UPT – Ingeniería de Sistemas\\  
+			EPIS\\	
+			Tacna, Perú\\                 
+			
+			\vspace{\baselineskip}
+			Javier Octavio Arteaga Ramos \\
+			2007028981\\
+			UPT – Ingeniería de Sistemas\\  
+			EPIS\\	
+			Tacna, Perú\\                 
+			
+		\end{center}
+		\normalsize			
+	\end{multicols}
+	\vspace{\baselineskip}
+	\vspace{\baselineskip}
+	\vspace{\baselineskip}
+	
+	\textbf{\textit{\large Resumen}}\rule[1.5mm]{5mm}{0.1mm}		
+	Desde el siglo pasado se ha investigado en aras de incrementar la eficiencia en el almacenamiento y el acceso a las bases de datos analíticas, sobre cuyos resultados las grandes compañías han introducido productos comerciales. En este escenario, Microsoft SQL Server 2012 ofrece dos opciones independientes para la creación de los modelos analíticos, el modelo multidimensional y el reciente modelo tabular. En este informe se profundiza en las características y potencialidades de cada uno, proponiendo los criterios más importantes que, a juicio de los autores, se deben tener en cuenta al emprender un nuevo proyecto. Se propone además una solución computacional que brinda a los especialistas y ejecutivos tanto visiones particulares como integradoras del estado del negocio, aprovechándose las facilidades recientes que proporciona la plataforma de Inteligencia de Negocios de Microsoft para la implementación de ambos modelos, dimensional y tabular.\\
+	
+	
+	\newpage
+	
+	\textbf{\textit{\large Abstract}}\rule[1.5mm]{5mm}{0.1mm} 		
+	\textit{
+		Since the last century, research has been carried out in order to increase efficiency in storage and access to analytical databases, on the results of which large companies have introduced commercial products. In this scenario, Microsoft SQL Server 2012 offers two independent options for the creation of analytical models, the multidimensional model and the recent tabular model. This report delves into the characteristics and potential of each one, proposing the most important criteria that, in the opinion of the authors, should be taken into account when undertaking a new project. It is also proposed a computational solution that provides specialists and executives with both particular views and integrating the state of the business, taking advantage of the recent facilities provided by the Microsoft Business Intelligence platform for the implementation of both dimensional and tabular models.
+	}
+	
+	\vspace{\baselineskip}
+	
+	\textbf{\textit{\large Keybwords}}\rule[1.5mm]{5mm}{0.1mm} 
+	Modelos, Inteligencia de Negocios, Dimensional, Tabular.
+	
+	
+	\rule{167mm}{0.1mm}
+	
+	\vspace{\baselineskip}
+	
+	 \section{INTRODUCCION}
+	 
+	 El siguiente trabajo fue hecho en consecuencia de un trabajo encargado para el curso de Inteligencia de Negocios.\\
+	 \\
+	 Consta de 2 partes: EL marco teórico y las referencias, la investigacion se ha hecho para la comparativa de dos tipos de modelados de tablas de base de datos en base a SQL: Modelado Dimensional y el Modelado Tabular.\\
+	 \\
+	 Unas de las principales caracteristicas que distiguen al modelo Tabular es que a nivel de consultas es muchisimo más veloz, como tambien que no necesita generar Agregaciones lo que simplifica el tiempo de procesamiento.\\
+	 \\
+	 En caso del modelo Dimensional su uso es necesario en caso que se quiera "jerarquizar" las tablas de un base de datos. En lo que destaca este modelo es su modo óptimo de organizar datos en los sistemas de Bussiness Intelligence  y lo mas destacable es que lo puede hacer mediante base de datos relacionales (ROLAP) o Base de Datos Dimensional (MOLAP). Se representa graficamente creando "estrellas" o "cubos".
+	 	 
+	 \section{MARCO TEÓRICO}
+	 
+	 	\subsection{Modelo Tabular}
+	 	
+	 	Los modelos tabulares son bases de datos “en memoria” de Analysis Services. Gracias a los algoritmos de compresión avanzados y al procesador de consultas multiproceso, el motor analítico en memoria xVelocity (VertiPaq) ofrece un acceso rápido a los objetos y los datos de los modelos tabulares para aplicaciones cliente de reportes como Microsoft Excel y Microsoft Power View.\\
+	 	\\
+	 	Los modelos tabulares admiten el acceso a los datos mediante dos modos: modo de almacenamiento en caché y modo DirectQuery. En el modo de almacenamiento en caché, puede integrar datos de varios orígenes como bases de datos relacionales, fuentes de distribución de datos y archivos de texto planos. En el modo DirectQuery, puede omitir el modelo en memoria, lo que permite a las aplicaciones cliente consultar los datos directamente en el origen relacional (SQL Server).
+	 	Analysis Services proporciona funciones de procesamiento analítico en línea (OLAP) y minería de datos para aplicaciones de Business Intelligence.\\
+	 	\\
+	 	
+			
+		
+	 
+	\bibliographystyle{apalike}
+	\bibliography{BIBLIO}
+	
+	
+\end{document}
