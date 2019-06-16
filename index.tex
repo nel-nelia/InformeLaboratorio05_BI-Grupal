@@ -110,7 +110,63 @@
 	 	Los modelos tabulares admiten el acceso a los datos mediante dos modos: modo de almacenamiento en caché y modo DirectQuery. En el modo de almacenamiento en caché, puede integrar datos de varios orígenes como bases de datos relacionales, fuentes de distribución de datos y archivos de texto planos. En el modo DirectQuery, puede omitir el modelo en memoria, lo que permite a las aplicaciones cliente consultar los datos directamente en el origen relacional (SQL Server).
 	 	Analysis Services proporciona funciones de procesamiento analítico en línea (OLAP) y minería de datos para aplicaciones de Business Intelligence.\\
 	 	\\
+	 		Los proyectos multidimensionales si bien les falta mucho para poder ser tan estables como las bases de datos transaccionales están en una etapa más avanzada de desarrollo y grandes empresas ya lo utilizan.[\cite{sanchez2015modelacion}]
 	 	
+	 	\begin{figure}[!ht]
+	 		\begin{center}
+	 			\includegraphics[scale=1.5]{./Imagenes/img01}	
+	 			\caption{Modelo Tabular en SQL Server}		
+	 		\end{center}
+	 	\end{figure}
+	 	
+	 	\subsubsection{Ventajas del Modelo Tabular} 
+	 	\begin{itemize}
+	 		
+	 		\item Mucho más veloz en consultas.
+	 		\item No requiere generar Aggregations (agregaciones) por lo que se simplifica el tiempo de procesamiento.
+	 		\item Gracias al DAX (el lenguaje para acceder a los datos equivalente al MDX), tiene mayor flexibilidad para obtener información.
+	 		\item Es intuitivo por lo que es mucho más rápido y fácil de entender e implementar.
+	 		\item Se basa en modelos relacionales.
+	 		
+	 	\end{itemize}
+	 	
+	 	\subsubsection{Problemas del Modelo Tabular} 
+	 	\begin{itemize}
+	 		
+	 		\item Las particiones no se procesaban en paralelo si no secuencialmente, lo que hace que sea más lento el procesamiento.
+	 		\item No se pueden usar múltiples idiomas.
+	 		\item Si son muchos datos tarda bastante en manejar configuraciones de diferentes particiones.
+	 		\item El modelo tabular acapara demasiada memoria RAM y a su vez es dependiente de tal que afectará a otras aplicaciones
+	 		
+	 	\end{itemize} 	
+	 	
+	 	\subsubsection{Sugerencias} 
+	 	\begin{itemize}
+	 		
+	 		\item Primeramente, si ya se tiene una base de datos multidimensional, no se recomienda moverse a base de datos tabulares.
+	 		\item El hardware requerido para un proyecto tabular es muy diferente al requerido por un proyecto multidimensional. Por la compresión de datos, requiere menos disco una modelo tabular, pero requiere mucha más memoria RAM porque todo lo usa en memoria. En general, se necesita un buen CPU y memoria.
+	 		\item  Los modelos tabulares consumen muchos recursos, por lo que se recomienda hacer pruebas del funcionamiento en un servidor de desarrollo y no en producción.
+	 		\item Se puede tener un modelo tabular y uno multidimensional instalados en la misma máquina, pero no es recomendable hacerlo en producción.
+	 		
+	 	\end{itemize} 
+	 	
+	 	\subsubsection{Jerarquías}
+	 	Las jerarquías, en los modelos tabulares, son metadatos que definen las relaciones entre dos o más columnas de una tabla. Las jerarquías facilitan la navegación de los usuarios del cliente y su inclusión en un informe. 			
+	 	\begin{figure}[H]
+	 		\begin{center}
+	 			\includegraphics[scale=0.75]{./Imagenes/img02}	
+	 			\caption{Jerarquías en el Modelo Tabular}		
+	 		\end{center}
+	 	\end{figure}
+	 	
+	 	Es una colección de niveles basados en atributos. Por ejemplo, una jerarquía de tiempo puede contener los niveles año, trimestre, mes, semana y día (ver imagen). Los usuarios finales pueden utilizar una jerarquía para examinar los datos del cubo. Se pueden revisar las propiedades de la Jerarquía con el menú contextual.			
+	 	\begin{figure}[H]
+	 		\begin{center}
+	 			\includegraphics[scale=0.75]{./Imagenes/img03}	
+	 			\caption{Método para mostrar las propiedades}	
+	 		\end{center}
+	 	\end{figure}
+	 	\newpage
 			
 		
 	 
