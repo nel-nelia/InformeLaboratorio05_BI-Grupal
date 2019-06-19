@@ -167,7 +167,52 @@
 	 		\end{center}
 	 	\end{figure}
 	 	\newpage
+			\subsubsection{Tablas y relaciones en el modelo tabular en Power Bi}
 			
+			Cuando estamos desarrollando un proyecto de Business Intelligence con Power BI el punto fuerte de nuestro trabajo es garantizar que el modelo de datos esté debidamente diseñado para que funcione correctamente. Hay que mirar las tablas del modelo y comprobar la correcta definición de las relaciones entre ellas.
+			Todo el tiempo que dediques a comprobar todas y cada una de las relaciones jugará a tu favor a la hora de crear las visualizaciones y los informes analíticos de tu proyecto de BI. Fíjate en la posición de cada tabla, en el lado que ocupan de la relación, Uno vs Muchos, en las columnas que intentas utilizar y si falla, comprueba que es la columna adecuada y que tiene el tipo adecuado.[\cite{cuevas2016comparing}]
+			
+			\begin{enumerate}[A.]
+				\item Si la tabla está del lado Uno de la relación, todos los valores de la columna que utilizas son distintos y no hay nulos.
+				\item Una vez que estés en la fase de visualización si obtienes resultados inesperados, como que el dato no se segmenta para cada filtro o que tienes valores nulos que no deben existir, regresa a comprobar la calidad de las relaciones definidas en tu modelo tabular. Por lo general allí encontrarás el problema y podrás darle solución.
+				\item Hay dos aspectos que se admiten en la definición del modelo, las relaciones\textbf{ Muchos a Muchos} y la Dirección de filtro cruzado. No te lo recomiendo, puede ser muy problemático, a menos que ya seas un experto y estés muy seguro de todas las implicaciones de utilizar este tipo de configuración.
+				\item No te compliques, no le hagas a Power BI más difícil el trabajo. Casi siempre, por no ser absoluta, es posible evitarlo. El modelo tabular es suficientemente rico y flexible como para permitirnos dar solución a los escenarios más complejos.  Y si no queda otra, hay que informarse muy bien de los posibles inconvenientes de este tipo de diseño.	
+				\item Un elemento interesante es que si el modelo es complejo, podemos crear esquemas que segmenten la complejidad y muestren partes del modelo, lo que es bastante más cómodo de trabajar.
+				
+			\end{enumerate}
+			
+		\subsection{Modelo Dimensional}
+		
+		Hay un amplio acuerdo entre los usuarios de DataWarehouse de que el modelamiento dimensional es la mejor forma de presentar la información, porque es la mejor manera de reunir las principales metas de diseño:
+			
+			\begin{itemize}
+				\item Presentar la información a los usuarios en la forma más simple posible.
+				\item Retornar los resultados a los usuarios lo más rápido posible.
+				\item Proveer información relevante que guarde pistas de los procesos subyacentes.
+			\end{itemize}
+
+		El modelo dimensional es mucho más fácil de entender para los usuarios que un sistema basado en un modelo normalizado de un sistema fuente típico, aunque un modelo dimensional típicamente contiene exactamente la misma información que un modelo normalizado.\\
+		\\
+		Un modelo dimensional tiene menos tablas y la información es agrupada en categorías de negocio coherentes que tienen sentido para los usuarios. Estas categorías ayudan a los usuarios a navegar por el modelo ya que categorías enteras pueden ser pasadas por alto si no son útiles para un determinado análisis\\
+		\\
+		\textit{\textbf{Según (Musso, 2012)}}, el Modelo Dimensional es una técnica de diseño lógico que tiene como objetivo presentar los datos dentro de un marco de trabajo estándar e intuitivo, para permitir su acceso con un alto rendimiento.\\
+		\\
+		\textit{\textbf{Según (Musso, 2012)}}, cada Modelo Dimensional está compuesto por una tabla con una llave combinada, llamada tabla de hechos, y con un conjunto de tablas más pequeñas llamadas tablas de dimensiones, como se muestra en la Figura 2. Los elementos de estas tablas se pueden definir de la siguiente manera:		
+			\begin{itemize}
+				\item \textbf{ Hechos:} es una colección de piezas de datos y datos de contexto. Cada hecho representa una parte del negocio, una transacción o un evento.
+				\item \textbf{Dimensiones:} es una colección de miembros, unidades o individuos del mismo tipo.
+				\item \textbf{Medidas:} son atributos numéricos de un hecho que representan el comportamiento del negocio relativo a una dimensión.
+			\end{itemize}
+		
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale=1.15]{./Imagenes/img05}	
+					\caption{Deficion del modelo Dimensional}		
+				\end{center}
+			\end{figure}
+		Cada punto de entrada a la tabla de hechos está conectado a una dimensión, lo que permite determinar el contexto de los hechos.\\
+		\\
+		\textit{\textbf{Por lo que (Musso, 2012)}} señala que dado que es muy común representar a un modelo dimensional como una tabla de hechos rodeada por las tablas de dimensiones, frecuentemente se le denomina también modelo estrella o esquema de estrella-unión. 
 		
 	 
 	\bibliographystyle{apalike}
