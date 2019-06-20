@@ -110,7 +110,7 @@
 	 	Los modelos tabulares admiten el acceso a los datos mediante dos modos: modo de almacenamiento en caché y modo DirectQuery. En el modo de almacenamiento en caché, puede integrar datos de varios orígenes como bases de datos relacionales, fuentes de distribución de datos y archivos de texto planos. En el modo DirectQuery, puede omitir el modelo en memoria, lo que permite a las aplicaciones cliente consultar los datos directamente en el origen relacional (SQL Server).
 	 	Analysis Services proporciona funciones de procesamiento analítico en línea (OLAP) y minería de datos para aplicaciones de Business Intelligence.\\
 	 	\\
-	 		Los proyectos multidimensionales si bien les falta mucho para poder ser tan estables como las bases de datos transaccionales están en una etapa más avanzada de desarrollo y grandes empresas ya lo utilizan.[\cite{sanchez2015modelacion}]
+	 	Los proyectos multidimensionales si bien les falta mucho para poder ser tan estables como las bases de datos transaccionales están en una etapa más avanzada de desarrollo y grandes empresas ya lo utilizan.[\cite{sanchez2015modelacion}]
 	 	
 	 	\begin{figure}[!ht]
 	 		\begin{center}
@@ -119,54 +119,62 @@
 	 		\end{center}
 	 	\end{figure}
 	 	
-	 	\subsubsection{Ventajas del Modelo Tabular} 
-	 	\begin{itemize}
-	 		
-	 		\item Mucho más veloz en consultas.
-	 		\item No requiere generar Aggregations (agregaciones) por lo que se simplifica el tiempo de procesamiento.
-	 		\item Gracias al DAX (el lenguaje para acceder a los datos equivalente al MDX), tiene mayor flexibilidad para obtener información.
-	 		\item Es intuitivo por lo que es mucho más rápido y fácil de entender e implementar.
-	 		\item Se basa en modelos relacionales.
-	 		
-	 	\end{itemize}
-	 	
-	 	\subsubsection{Problemas del Modelo Tabular} 
-	 	\begin{itemize}
-	 		
-	 		\item Las particiones no se procesaban en paralelo si no secuencialmente, lo que hace que sea más lento el procesamiento.
-	 		\item No se pueden usar múltiples idiomas.
-	 		\item Si son muchos datos tarda bastante en manejar configuraciones de diferentes particiones.
-	 		\item El modelo tabular acapara demasiada memoria RAM y a su vez es dependiente de tal que afectará a otras aplicaciones
-	 		
-	 	\end{itemize} 	
-	 	
-	 	\subsubsection{Sugerencias} 
-	 	\begin{itemize}
-	 		
-	 		\item Primeramente, si ya se tiene una base de datos multidimensional, no se recomienda moverse a base de datos tabulares.
-	 		\item El hardware requerido para un proyecto tabular es muy diferente al requerido por un proyecto multidimensional. Por la compresión de datos, requiere menos disco una modelo tabular, pero requiere mucha más memoria RAM porque todo lo usa en memoria. En general, se necesita un buen CPU y memoria.
-	 		\item  Los modelos tabulares consumen muchos recursos, por lo que se recomienda hacer pruebas del funcionamiento en un servidor de desarrollo y no en producción.
-	 		\item Se puede tener un modelo tabular y uno multidimensional instalados en la misma máquina, pero no es recomendable hacerlo en producción.
-	 		
-	 	\end{itemize} 
-	 	
-	 	\subsubsection{Jerarquías}
-	 	Las jerarquías, en los modelos tabulares, son metadatos que definen las relaciones entre dos o más columnas de una tabla. Las jerarquías facilitan la navegación de los usuarios del cliente y su inclusión en un informe. 			
-	 	\begin{figure}[H]
-	 		\begin{center}
-	 			\includegraphics[scale=0.75]{./Imagenes/img02}	
-	 			\caption{Jerarquías en el Modelo Tabular}		
-	 		\end{center}
-	 	\end{figure}
-	 	
-	 	Es una colección de niveles basados en atributos. Por ejemplo, una jerarquía de tiempo puede contener los niveles año, trimestre, mes, semana y día (ver imagen). Los usuarios finales pueden utilizar una jerarquía para examinar los datos del cubo. Se pueden revisar las propiedades de la Jerarquía con el menú contextual.			
-	 	\begin{figure}[H]
-	 		\begin{center}
-	 			\includegraphics[scale=0.75]{./Imagenes/img03}	
-	 			\caption{Método para mostrar las propiedades}	
-	 		\end{center}
-	 	\end{figure}
-	 	\newpage
+	 		\subsubsection{Ventajas del Modelo Tabular} 
+			\begin{itemize}
+	 			
+	 			\item Mucho más veloz en consultas.
+	 			\item No requiere generar Aggregations (agregaciones) por lo que se simplifica el tiempo de procesamiento.
+	 			\item Gracias al DAX (el lenguaje para acceder a los datos equivalente al MDX), tiene mayor flexibilidad para obtener información.
+	 			\item Es intuitivo por lo que es mucho más rápido y fácil de entender e implementar.
+	 			\item Se basa en modelos relacionales.
+	 			
+ 			\end{itemize}
+ 		
+	 		\subsubsection{Problemas del Modelo Tabular} 
+			\begin{itemize}
+				
+				\item Las particiones no se procesaban en paralelo si no secuencialmente, lo que hace que sea más lento el procesamiento.
+				\item No se pueden usar múltiples idiomas.
+				\item Si son muchos datos tarda bastante en manejar configuraciones de diferentes particiones.
+				\item El modelo tabular acapara demasiada memoria RAM y a su vez es dependiente de tal que afectará a otras aplicaciones
+				
+			\end{itemize} 	
+		
+			\subsubsection{Sugerencias} 
+			\begin{itemize}
+			
+				\item Primeramente, si ya se tiene una base de datos multidimensional, no se recomienda moverse a base de datos tabulares.
+				\item El hardware requerido para un proyecto tabular es muy diferente al requerido por un proyecto multidimensional. Por la compresión de datos, requiere menos disco una modelo tabular, pero requiere mucha más memoria RAM porque todo lo usa en memoria. En general, se necesita un buen CPU y memoria.
+				\item  Los modelos tabulares consumen muchos recursos, por lo que se recomienda hacer pruebas del funcionamiento en un servidor de desarrollo y no en producción.
+				\item Se puede tener un modelo tabular y uno multidimensional instalados en la misma máquina, pero no es recomendable hacerlo en producción.
+			
+			\end{itemize} 
+		
+			\subsubsection{Jerarquías}
+			Las jerarquías, en los modelos tabulares, son metadatos que definen las relaciones entre dos o más columnas de una tabla. Las jerarquías facilitan la navegación de los usuarios del cliente y su inclusión en un informe. 			
+				\begin{figure}[H]
+					\begin{center}
+						\includegraphics[scale=0.75]{./Imagenes/img02}	
+						\caption{Jerarquías en el Modelo Tabular}		
+					\end{center}
+				\end{figure}
+						
+			Es una colección de niveles basados en atributos. Por ejemplo, una jerarquía de tiempo puede contener los niveles año, trimestre, mes, semana y día (ver imagen). Los usuarios finales pueden utilizar una jerarquía para examinar los datos del cubo. Se pueden revisar las propiedades de la Jerarquía con el menú contextual.			
+				\begin{figure}[H]
+					\begin{center}
+						\includegraphics[scale=0.75]{./Imagenes/img03}	
+						\caption{Método para mostrar las propiedades}	
+					\end{center}
+				\end{figure}
+			\newpage
+			En la siguiente tabla se describen las propiedades de una jerarquía definida por el usuario.			
+				\begin{figure}[H]
+					\begin{center}
+						\includegraphics[scale=0.75]{./Imagenes/img04}	
+						\caption{Propiedades de una jerarquía }		
+					\end{center}
+				\end{figure}
+			
 			\subsubsection{Tablas y relaciones en el modelo tabular en Power Bi}
 			
 			Cuando estamos desarrollando un proyecto de Business Intelligence con Power BI el punto fuerte de nuestro trabajo es garantizar que el modelo de datos esté debidamente diseñado para que funcione correctamente. Hay que mirar las tablas del modelo y comprobar la correcta definición de las relaciones entre ellas.
@@ -214,7 +222,61 @@
 		\\
 		\textit{\textbf{Por lo que (Musso, 2012)}} señala que dado que es muy común representar a un modelo dimensional como una tabla de hechos rodeada por las tablas de dimensiones, frecuentemente se le denomina también modelo estrella o esquema de estrella-unión. 
 		
-	 
+		\subsubsection{Características del modelo de dimensional}
+		
+		\begin{itemize}
+			\item Contiene métricas numéricas del negocio.
+			\item Puede contener grandes volúmenes de datos.
+			\item Puede crecer rápidamente.
+			\item Puede contener datos base, derivados y resumidos.
+			\item Son típicamente aditivos.
+		\end{itemize}
+	
+		\subsubsection{Modelado dimensional}
+		
+		Modelado dimensional (DM en inglés) nombra a un conjunto de técnicas y conceptos utilizados en el diseño de almacenes de datos. Se considera que es diferente del Modelo entidad-relación. El modelado de dimensiones no implica necesariamente una base de datos relacional, el mismo enfoque de modelado, a nivel lógico, se puede utilizar para cualquier forma física, tal como archivos de base de datos multidimensional o planas. \\
+		\\
+		Según el consultor de almacenamiento de datos Ralph Kimball,1 el modelado dimensional es una técnica de diseño de bases de datos destinadas a apoyar a las consultas de los usuarios finales en un almacén de datos. Se orienta en torno a la comprensibilidad y rendimiento. Según él, aunque el modelo entidad relacional orientado a transacciones es muy útil para la captura de transacción, se debe evitar en la entrega al usuario final.\\
+		\\
+		El modelado dimensional siempre utiliza los conceptos de hechos (medidas) y dimensiones (contexto). Los hechos son normalmente (pero no siempre) los valores numéricos que se pueden agregar, y las dimensiones son grupos de jerarquías y descriptores que definen los hechos. Por ejemplo, la cantidad de ventas es un hecho; marca de tiempo, producto, NoRegistro, NoTienda, etc., son elementos de dimensiones. Los modelos dimensionales son construidos por el área de proceso de negocio, por ejemplo, las ventas en tiendas, inventarios, reclamaciones, etc. Debido a que las diferentes áreas de proceso de negocio comparten algunas pero no todas las dimensiones, la eficiencia en el diseño, la operación y la coherencia, se logra usando tablas de dimensión, es decir, utilizando una copia de la dimensión compartida. El término "tablas de dimensión" se originó por Ralph Kimball.[\cite{ramos2016data}]
+		
+		\subsubsection{Proceso de modelado dimensional}
+		
+		El modelo tridimensional se construye sobre uncon dimensiones de la tabla de hechospara construir el esquema, el siguiente modelo de diseño se utiliza:
+		
+		\begin{enumerate}[A.]
+			\item Escoger el proceso de negocio:\\
+			El proceso de modelización dimensional se basa en un método de diseño de 4 pasos que ayuda a asegurar la facilidad de uso del modelo dimensional y el uso del almacén de datos. Los fundamentos del diseño se basan en el proceso de negocio real que debe cubrir el almacén de datos. Por lo tanto, el primer paso en el modelo es describir el proceso de negocio en él se basa el modelo. Esto podría ser por ejemplo una situación de ventas en una tienda al por menor. Para describir el proceso de negocio, se puede optar por hacer esto en texto plano o utilizar Notación de Modelado de Procesos de Negocio (BPMN en inglés) u otras guías de diseño, como el Lenguaje Unificado de Modelado (UML en inglés).
+			
+			\item Declarar el "grain":\\
+			Después de describir el Proceso de Negocio, el siguiente paso en el diseño es declarar el "grain" del modelo. El "grain" del modelo es la descripción exacta de lo que el modelo dimensional debería concentrarse. Para aclarar lo que significa el "grain", usted debe escoger el proceso central y describirlo con una sola oración. Además el "grain" (oración) es a lo que se le va a construir sus dimensiones y tabla de hechos. Puede que le resulte necesario volver a este paso para alterar el "grain" debido a nueva información obtenida en lo que su modelo supone entregar.
+			
+			\item Identificar las dimensiones:\\
+			El tercer paso en el proceso de diseño es definir las dimensiones del modelo. Las dimensiones deben ser definidas dentro del "grain" de la segunda etapa del proceso de modelado dimensional de 4 pasos.\\
+			 \\
+			 Las dimensiones son la base de la tabla de hechos, y es donde se recogen los datos de la tabla de hechos. Normalmente las dimensiones son sustantivos, como fecha, tienda, inventario, etc. Estas dimensiones son donde se almacenan todos los datos. Por ejemplo, la dimensión fecha podría contener datos tales como año, mes y día de la semana.
+			
+			\item Identificar los hechos:\\
+			Después de definir las dimensiones, el siguiente paso en el proceso es crear las llaves de la tabla de hechos. Este paso es identificar los hechos numéricos que poblarán cada fila de la tabla de hechos. Este paso está estrechamente relacionado con los usuarios de negocio del sistema, ya que es donde consiguen el acceso a los datos almacenados en el almacén de datos. Por lo tanto la mayor parte de las filas de la tabla de hecho son cifras numéricas, aditivos tales como cantidad o costo por unidad, etc.[\cite{cedeno2006modelo}]
+			
+		\end{enumerate}
+	
+		\subsubsection{Normalización de Dimensión}
+		La Normalización de Dimensión elimina atributos redundantes. Las dimensiones están estrictamente unidas en las sub-dimensiones.Tiene una influencia en la estructura de datos que difiere de muchas filosofías de almacenes de datos.\\
+		Los desarrolladores a menudo no normalizan las dimensiones debido a varias razones:
+		\begin{itemize}
+			\item La normalización hace la estructura de datos más compleja.
+			\item El tiempo de ejecución puede ser más lento, debido a las muchas uniones entre tablas.
+			\item El ahorro de espacio es mínimo.
+			\item Los Mapeados de bits de índices no pueden utilizarse.
+			\item Los Mapeados de bits de índices no pueden utilizarse.
+			\item Los Mapeados de bits de índices no pueden utilizarse.
+		\end{itemize}
+
+	
+		
+	 	
+	 	
 	\bibliographystyle{apalike}
 	\bibliography{BIBLIO}
 	
