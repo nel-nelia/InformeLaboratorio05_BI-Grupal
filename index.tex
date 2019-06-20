@@ -273,6 +273,20 @@
 			\item Los Mapeados de bits de índices no pueden utilizarse.
 		\end{itemize}
 
+El rendimiento de consultas, bases de datos 3NF sufren de problemas de rendimiento cuando se agregan o recuperar muchos valores dimensionales que pueden requerir análisis.\\
+		\\
+		Hay algunos argumentos sobre por qué la normalización puede ser útil. Puede ser una ventaja cuando una parte de la jerarquía es común a más de una dimensión. Por ejemplo, una dimensión geográfica puede ser reutilizable porque tanto las dimensiones de los clientes y los proveedores la utilizan.
+		
+	 	
+	 	\subsubsection{Beneficios del modelado dimensional}
+	 	
+	 	Los beneficios del modelado dimensional son los siguientes:
+	 	
+	 	\begin{enumerate}[A.]
+	 		\item Comprensibilidad - En comparación con el modelo normalizado, el modelo dimensional es más fácil de entender y más intuitivo. En los modelos dimensionales, la información se agrupa en dimensiones coherentes, por lo que es más fácil de leer e interpretar. La simplicidad también permite al software navegar las bases de datos de manera eficiente. En los modelos normalizados, los datos se divide en muchas entidades discretas e incluso un proceso de negocio simple podría resultar en docenas de tablas unidas entre sí de una manera compleja.
+	 		\item El rendimiento de consultas - Los modelos dimensionales están más desnormalizados y optimizados para las consultas de datos, mientras que los modelos normalizados buscan eliminar redundancias de datos y están optimizados para la carga de transacciones y actualización. El marco predecible de un modelo dimensional permite a la base de datos hacer fuertes supuestos sobre los datos, por lo que puede tener un impacto positivo en el rendimiento. Cada dimensión es el equivalente a un punto de entrada en la tabla de hechos, y esta estructura simétrica permite un manejo eficaz de consultas complejas. La optimización de consulta se hace simple, predecible y controlable.
+	 		\item Extensibilidad - Los modelos dimensionales son escalables y fácilmente acomodados a nuevos datos inesperados. Las tablas existentes pueden ser cambiados, ya sea por la simple adición de nuevas filas de datos en la tabla o ejecutar en SQL algún comando de tipo "Alter Table". Las consultas o aplicaciones montadas sobre el almacén de datos no necesitan ser reprogramadas para acomodarse a los nuevos cambios. Las consultas y aplicaciones antiguas continúan funcionando sin producir resultados diferentes. Pero en los modelos normalizados cada modificación se debe considerar cuidadosamente, debido a las complejas dependencias entre las tablas de bases de datos.
+	 	\end{enumerate}
 	
 		
 	 	
